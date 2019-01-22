@@ -1,0 +1,40 @@
+<html ng-app="myPoemModule">
+<head>
+    <title>poem</title>
+    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="theme-color" content="#b8860b" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+</head>
+<body ng-controller="myPoemController">
+    <div class="box" id="box1" ng-repeat="p in authors track by $index">
+        <div class="box" id="content1" ng-click="test(p.Id)" ng >{{p.name}} {{$index}}</div>
+    </div>
+    <div class="box" id="content2">to</div>
+        <div class="box" id="content3">from</div>
+<script>
+    //creating a module
+var myApp = angular.module("myPoemModule",[]);
+//creating controller
+var myPoemController = function($scope,$http) {
+// authors list................................................authors list    
+    var urlAuthor = "data/author.json";
+        $http.get(urlAuthor)
+        .then(function(response) {
+            $scope.authors = response.data;
+            },
+          function(error) {
+            alert(error);
+            }); 
+     // id calll ................................................................. 
+    $scope.test = function (i) {
+        var doc = document.getElementById('content1').textContent;
+        document.getElementById('content3').innerHTML = i;
+    }
+    
+// authors list................................................authors list 
+};
+myApp.controller("myPoemController",myPoemController);
+</script>
+</body>
+</html>

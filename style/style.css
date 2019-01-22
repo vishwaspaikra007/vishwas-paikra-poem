@@ -1,0 +1,163 @@
+body
+{
+    margin: 0px;
+    background: rgb(200,150,0);
+    font-family: 'Concert One', cursive;
+    padding-top: 2vh; 
+}
+.box
+{
+    box-sizing: border-box;
+    position: fixed;
+    margin-left: 35vw;
+    width: 30vw;
+    height: 90vh;
+    border-radius: 20px;
+    background: brown;
+    color: darkgoldenrod;
+    padding: 20px;
+    font-size: 2.5vh;
+    text-align: center;
+    overflow-y: scroll;
+    transition-duration: 1s;
+}
+.mainMenu
+{
+    width: 25vw;
+    height: 96vh;
+    margin-left: 2vh;
+    grid-template-rows: auto auto;
+    background: rgba(230,210,150,1);
+    border-radius: 10px;
+    position: fixed;
+    z-index: 2;
+    box-sizing: border-box;
+}
+.menu
+{
+    width: auto;
+    background: brown;
+    margin: 10px;
+    border-radius: 20px;
+    color: darkgoldenrod;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+.navBar
+{
+    width: 45px;
+    height: 45px;
+    left: 45vw;
+    top: 2.5vh;
+    border-radius: 50px;
+    background: rgba(230,210,150,1);
+    position: fixed;
+    margin: auto;
+    z-index: 2;
+    grid-template-rows: auto auto auto;
+    box-sizing: border-box;
+    padding: 2%;
+    transition-duration: 1s;
+    display: none;
+}
+.stick
+{
+    width: 100%;
+    height: 30%;
+    margin: 3%;
+    box-sizing: border-box;
+    border-radius: 30%;
+    background: rgba(150,130,70,1);
+    transition-duration: 1s;
+    display: none;
+}
+.changeC
+{
+    left: 85vw;
+}
+.changeC #stick1
+{
+    transform: rotate(45deg) translate(20%,80%) scaleX(1.5);
+    transform-origin: 50% 50%;
+}
+.changeC #stick2
+{
+    opacity: 0;
+}
+.changeC #stick3
+{
+    transform: rotate(-45deg) translate(20%,-80%) scaleX(1.5);
+    transform-origin: 50% 50%;
+}
+#eliNav
+{
+    width:8vh;
+}
+#authorMenu
+{
+    top: 20px;
+}
+#poemsMenu
+{
+    top:25vh;
+}
+::-webkit-scrollbar
+{
+    width:10px;
+}
+::-webkit-scrollbar-track
+{
+    background: none;
+}
+::-webkit-scrollbar-thumb
+{
+    width: 20px;
+    background: rgba(200,150,0,0.5);
+    border-radius: 10px;
+}
+@media only screen and (max-width: 800px)
+{
+    .box
+    {
+        width: 80vw;
+        height: 90vh; 
+        margin-left: 10vw;
+        font-size: 3.5vw;
+        top: 5vh;
+        line-height: 17.5px;
+    }
+    .changeLeft
+    {
+        transform: translateX(80vw);
+    }
+    .mainMenu
+    {
+        top: 0px;
+        width: 80vw;
+        margin: 0px; 
+        height: 100vh;
+        padding: 10px;
+        border-radius: 0px;
+        box-sizing: border-box;
+        background: rgba(230,210,150,1);
+        left: -80vw;
+        transition: 1s;
+        
+    }
+    .shi
+    {
+        left: 0px;
+    }
+    body
+    {
+        padding: 0px;
+        margin: 0px;
+    }
+    .stick,.navBar
+    {
+        display: block;
+    }
+
+}

@@ -4,90 +4,57 @@
    language : html/css/javascript
 description : I'm currently a student who is trying his best
               to learn every possible productive stuffs around him -->
-
 <!doctype HTML>
-<html>
+<html ng-app="myPoemModule">
 <head>
     <title>poem</title>
     <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="theme-color" content="#b8860b" />
-    <style>
-        body
-        {
-            margin: 0x;
-            background: rgb(200,150,0);
-            font-family: 'Concert One', cursive;
-        }
-        .box
-        {
-            margin: auto;
-            width: 30vw;
-            height: 90vh;
-            border-radius: 20px;
-            background: brown;
-            color: darkgoldenrod;
-            padding: 20px;
-            font-size: 1.2vw;
-            text-align: center;
-            overflow-y: scroll;
-        }
-        ::-webkit-scrollbar
-        {
-            width:10px;
-        }
-        ::-webkit-scrollbar-track
-        {
-            background: none;
-        }
-        ::-webkit-scrollbar-thumb
-        {
-            width: 20px;
-            background: rgba(200,150,0,0.5);
-            border-radius: 10px;
-        }
-        @media only screen and (max-width: 800px)
-        {
-            .box
-            {
-                width: 80vw;
-                height: 80vh; 
-                font-size: 3.5vw;
-                margin-top: 7vh;
-                line-height: 17.5px;
-            }
-              
-        }
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="js/httpscript.js"></script>
+    <link rel="stylesheet" href="style/style.css" />
 </head>
-<body>
-    <div id="box1" class="box">
-        <h1 id="poemtitle1" class="poemtitle">We3</h1>
-        <p id="content1" class="content">
-            As I was taking steps, you helped me,<br>
-            You helped me like a brother and a friend.<br>
-            You taught me to be free and to be me.<br><br>
-
-            But once in our life, with a last high five<br>
-            We separated apart with in our hands a dart(metaphoric).<br>
-            We weren't ready for life to strike us<br>
-            But it was necessary for life to teach us...<br><br>
-
-            But before all this we became three<br>
-            A new friend gave us the title the besties<br>
-            we enjoyed the time we spent together<br>
-            our separate decisions made us split altogether...<br><br>
-
-            But after seeing the one-fourth of our life's journey.<br>
-            I thank God for the blessings during our करनीs...<br>
-            we don't know where we all be after many years.<br>
-            But for sure We3 all together in a near KFC with a beer.<br><br>
-        </p>
-        <p id="autor1" class="author">
-           BY VISHWAS PAIKRA<br>
-           to two TRUE FRIENDS<br>
-           12 January 2019<br>
-        </p>
+<body ng-controller="myPoemController">
+    <div class="navBar" id="navBar1" ng-click="toggle = !toggle" ng-class="{'changeC':toggle}">
+        <div class="stick" id="stick1"></div>
+        <div class="stick" id="stick2"></div>
+        <div class="stick" id="stick3"></div>
+    </div>
+   <!-- Author menu Author menu Author menu Author menu Author menu Author menu -->
+   <div class="mainMenu" id="mainMenu1" ng-class="{'shi':toggle}">
+        <div class="menu" id="authorMenu">
+         <h1>Authors</h1>
+          <form action="#" id="authorSeltn">
+           <div ng-repeat="a in authors track by $index">
+               <input id="autId" type="radio" name="author" ng-click="titleL(a.Id)"> {{a.name}} 
+            </div>
+          </form>
+        </div>
+        <!-- poems menu poems menu poems menu poems menu poems menu poems menu     -->
+        <div class="menu" id="poemsMenu">
+         <h1>poems</h1>
+          <form action="#" onsubmit="return false">
+            <div ng-repeat="t in titles track by $index" id="poemList"> 
+                <input type="radio" name="title" ng-value="{{p.Id}}" ng-click="poem(t.Id)"> {{t.title}}
+            </div>
+          </form>
+        </div>
+    </div>
+    <div>
+        <div id="box1" class="box" ng-class="{'changeLeft':toggle}">
+           <div ng-repeat="p in poems track by $index">
+            <h1 id="poemtitle1" class="poemtitle">
+                {{p.title}}
+            </h1>
+            <p id="content1" class="content poem" ng-repeat="a in p.poem track by $index">
+                {{a}}
+            </p>
+            <p id="autor1" class="author">
+                {{p.author}}
+            </p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
