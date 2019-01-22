@@ -21,13 +21,17 @@ description : I'm currently a student who is trying his best
         <div class="stick" id="stick2"></div>
         <div class="stick" id="stick3"></div>
     </div>
-   <!-- Author menu Author menu Author menu Author menu Author menu Author menu -->
-   <div class="mainMenu" id="mainMenu1" ng-class="{'shi':toggle}">
+    <div class="maincontainer">
+    <!-- Author menu Author menu Author menu Author menu Author menu Author menu -->
+    <div class="mainMenu" id="mainMenu1" ng-class="{'shi':toggle}">
         <div class="menu" id="authorMenu">
          <h1>Authors</h1>
           <form action="#" id="authorSeltn">
            <div ng-repeat="a in authors track by $index">
-               <input id="autId" type="radio" name="author" ng-click="titleL(a.Id)"> {{a.name}} 
+              <label class="container">
+                   <input type="radio" name="author" ng-click="titleL(a.Id)">
+                   <span class="checkmark">{{a.name}}</span> <br> 
+              </label>
             </div>
           </form>
         </div>
@@ -36,13 +40,15 @@ description : I'm currently a student who is trying his best
          <h1>poems</h1>
           <form action="#" onsubmit="return false">
             <div ng-repeat="t in titles track by $index" id="poemList"> 
-                <input type="radio" name="title" ng-value="{{p.Id}}" ng-click="poem(t.Id)"> {{t.title}}
+               <label class="container">
+                    <input type="radio" name="title" ng-value="{{p.Id}}" ng-click="poem(t.Id)">
+                    <span class="checkmark">{{t.title}}</span> <br>
+               </label>
             </div>
           </form>
         </div>
     </div>
-    <div>
-        <div id="box1" class="box" ng-class="{'changeLeft':toggle}">
+    <div id="box1" class="box" ng-class="{'changeLeft':toggle}">
            <div ng-repeat="p in poems track by $index">
             <h1 id="poemtitle1" class="poemtitle">
                 {{p.title}}
