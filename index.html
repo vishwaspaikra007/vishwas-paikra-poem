@@ -25,11 +25,11 @@ description : I'm currently a student who is trying his best
     <!-- Author menu Author menu Author menu Author menu Author menu Author menu -->
     <div class="mainMenu" id="mainMenu1" ng-class="{'shi':toggle}">
         <div class="menu" id="authorMenu">
-         <h1>Authors</h1>
+         <h1>Poets</h1>
           <form action="#" id="authorSeltn">
-           <div ng-repeat="a in authors track by $index">
+           <div ng-repeat="a in poets track by $index">
               <label class="container">
-                   <input type="radio" name="author" ng-click="titleL(a.Id)">
+                   <input type="radio" name="poets" ng-click="titleL(a.Id)">
                    <span class="checkmark">{{a.name}}</span> <br> 
               </label>
             </div>

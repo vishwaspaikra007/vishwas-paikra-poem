@@ -7,7 +7,7 @@ var myPoemController = function($scope,$http) {
     var urlAuthor = "data/author.json";
         $http.get(urlAuthor)
         .then(function(response) {
-            $scope.authors = response.data;
+            $scope.poets = response.data;
             },
           function(error) {
             alert(error);
