@@ -1,0 +1,44 @@
+<!-- Author : Vishwas Paikra
+    content : Flame Game
+    Contact : 8839501504
+   language : html/css/javascript
+description : I'm currently a student who is trying his best
+              to learn every possible productive stuffs around him -->
+<!doctype HTML>
+<html ng-app="myModule">
+<head>
+    <title>poem</title>
+    <meta name="theme-color" content="#b8860b" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="../js/httpscript.js"></script>
+    <link rel="stylesheet" href="../style/upload.css"/>
+</head>
+<body ng-controller="myController">
+    <!-- Menu button    ---------------------------------------------------------------------->
+    <div class="navBar" id="navBar1" ng-click="toggle = !toggle" ng-class="{'changeC':toggle}">
+        <div class="stick" id="stick1"></div>
+        <div class="stick" id="stick2"></div>
+        <div class="stick" id="stick3"></div>
+    </div>
+<div class="formBackground">
+  <div class="formContainer">
+   <form action="#" method="post">
+       <label for="inputName">
+       <span class="nameClass">Name</span><br>
+       <input type="text" id="inputName" placeholder="Name..."><br>
+       </label><br>
+       <label for="inputUName">
+       <span class="nameClass">User Name</span><br>
+       <input type="text" id="inputUName" placeholder="User-Name..."><br>
+       </label><br>
+       <label for="inputPoem">
+       <span class="namePoem">Poem</span><br>
+        <textarea ng-model="livePoem" name="message" placeholder="Poem..." rows="10" cols="30" id="inputPoem" width="400px" height="500px"></textarea>
+       </label><br><br>
+       <input type="submit" value="Submit">
+    </form>
+   <div class="livePoem">{{livePoem}}</div>
+  </div>  
+</div>
+</body>
+</html>

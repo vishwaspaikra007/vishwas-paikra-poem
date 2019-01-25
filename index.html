@@ -13,17 +13,20 @@ description : I'm currently a student who is trying his best
     <meta name="theme-color" content="#b8860b" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
     <script src="js/httpscript.js"></script>
+    <link rel="stylesheet" href="style/upload.css">
     <link rel="stylesheet" href="style/style.css" />
 </head>
 <body ng-controller="myPoemController">
+<!-- Menu button    ---------------------------------------------------------------------->
     <div class="navBar" id="navBar1" ng-click="toggle = !toggle" ng-class="{'changeC':toggle}">
         <div class="stick" id="stick1"></div>
         <div class="stick" id="stick2"></div>
         <div class="stick" id="stick3"></div>
     </div>
     <div class="maincontainer">
-    <!-- Author menu Author menu Author menu Author menu Author menu Author menu -->
     <div class="mainMenu" id="mainMenu1" ng-class="{'shi':toggle}">
+        <div class="menu" id="uploadMenu" ng-click="toggle2 = !toggle2" >Upload</div>
+<!-- Author menu Author menu Author menu Author menu Author menu Author menu -->
         <div class="menu" id="authorMenu">
          <h1>Poets</h1>
           <form action="#" id="authorSeltn">
@@ -35,7 +38,7 @@ description : I'm currently a student who is trying his best
             </div>
           </form>
         </div>
-        <!-- poems menu poems menu poems menu poems menu poems menu poems menu     -->
+<!-- poems menu poems menu poems menu poems menu poems menu poems menu     -->
         <div class="menu" id="poemsMenu">
          <h1>poems</h1>
           <form action="#" onsubmit="return false">
@@ -62,5 +65,26 @@ description : I'm currently a student who is trying his best
             </div>
         </div>
     </div>
+<!-- upload form ---------------------------------------------------------->
+<div class="formBackground" ng-class="{'uploadC' : toggle2}" ng-click="toggle2 = !toggle2">
+  <div class="formContainer">
+   <form action="#" method="post" id="uploadForm">
+       <label for="inputName">
+       <span class="nameClass">Name</span><br>
+       <input type="text" id="inputName" placeholder="Name..."><br>
+       </label><br>
+       <label for="inputUName">
+       <span class="nameClass">User Name</span><br>
+       <input type="text" id="inputUName" placeholder="User-Name..."><br>
+       </label><br>
+       <label for="inputPoem">
+       <span class="namePoem">Poem</span><br>
+        <textarea ng-model="livePoem" name="message" placeholder="Poem..." rows="10" cols="30" id="inputPoem" width="400px" height="500px"></textarea>
+       </label><br><br>
+       <input type="submit" value="Submit">
+    </form>
+   <div class="livePoem">{{livePoem}}</div>
+  </div>  
+</div> 
 </body>
 </html>

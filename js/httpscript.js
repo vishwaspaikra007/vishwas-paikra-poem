@@ -38,6 +38,8 @@ var myPoemController = function($scope,$http) {
                 }); 
         
     }
+// upload section................................................................
+    $scope.livepoem = "Once upon a time"; 
 };
 myApp.controller("myPoemController",myPoemController);
  /*   function changeC(x) {
