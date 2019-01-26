@@ -45,14 +45,15 @@ description : I'm currently a student who is trying his best
           <form action="#" onsubmit="return false">
             <div ng-repeat="t in titles track by $index" id="poemList"> 
                <label class="container">
-                    <input type="radio" name="title" ng-value="{{p.Id}}" ng-click="poem(t.Id) ">
+                    <input type="radio" name="title" ng-value="{{p.Id}}" ng-click="poem(t.Id)">
                     <span class="checkmark"></span>
                     <p>{{t.title}}</p><br>
                </label>
             </div>
           </form>
-        </div>
+        </div>  
     </div>
+<!--  poem box poem box poem box poem box poem box poem box poem box poem box poem box-->
     <div id="box1" class="box" ng-class="{'changeLeft':toggle}">
            <div ng-repeat="p in poems track by $index">
             <h1 id="poemtitle1" class="poemtitle">

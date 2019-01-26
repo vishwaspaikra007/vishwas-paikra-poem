@@ -36,18 +36,20 @@ var myPoemController = function($scope,$http) {
               function(error) {
                 alert("Sorry the author has no Poems" + error);
                 }); 
-        
+        var chgMenu = document.getElementById("mainMenu1");
+        var chgCon = document.getElementById("box1");
+        var chgNav = document.getElementById("navBar1");
+        chgMenu.classList.remove("shi");
+        chgNav.classList.remove("changeC");
+        chgCon.classList.remove("changeLeft");
     }
 // upload section................................................................
     $scope.livepoem = "Once upon a time"; 
 };
 myApp.controller("myPoemController",myPoemController);
- /*   function changeC(x) {
-        x.classList.toggle("changeC");
-    }
-    function sohi() {
-        document.getElementById('mainMenu').classList.toggle("shi");
-    } */
+window.onload = function() {
+    alert("PLease select author and poem from the menu{the three bars inside a circle}");
+}
 
 
 
