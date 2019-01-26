@@ -38,7 +38,7 @@
     background:  rgba(230,210,150,1);
     box-sizing: border-box;
 }
-span
+#uploadForm > span
 {
     position: relative;
     padding: 2px;

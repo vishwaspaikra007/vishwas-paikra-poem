@@ -209,8 +209,9 @@ body
     height: 100%;
     width: 100%;
     padding: 2px;
-    border-radius: 5px;
+    border-radius: 10px;
     text-indent: 10px;
+    background-color: rgba(230,210,150,1);
 }
 .container > p
 {
@@ -225,10 +226,17 @@ body
 }
 .container:hover .checkmark 
 {
-    background-color: rgba(230,210,150,1);
+    background-color: rgba(230,210,150,0.8);
+}
+.container:hover p
+{
+    color: brown;
 }
 .container input:checked ~ .checkmark 
 {
-    background-color: rgba(230,210,150,1);
-    color:rgb(150,100,0);
+    background-color: burlywood;
+}
+.container input:checked ~ p
+{
+    color: brown;   
 }
