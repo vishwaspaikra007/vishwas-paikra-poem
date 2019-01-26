@@ -36,6 +36,7 @@ body
     background: rgba(230,210,150,1);
     border-radius: 10px;
     box-sizing: border-box;
+    overflow-y: auto;
 }
 .menu
 {
@@ -44,10 +45,9 @@ body
     margin: 10px;
     border-radius: 20px;
     color: darkgoldenrod;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px;
-    overflow-y: auto;
     box-sizing: border-box;
 }
 .navBar
@@ -114,7 +114,7 @@ body
     font-size: 40px;
     font-weight: 800;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     cursor: pointer;
 }
 ::-webkit-scrollbar
@@ -185,10 +185,12 @@ body
 }
 .container 
 {
+    box-sizing: border-box;
     display: block;
     position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
+    padding-left: 10px;
+    height: 40px;
+    margin-bottom: 20px;
     cursor: pointer;
     font-size: 22px;
 }
@@ -200,14 +202,26 @@ body
 }
 .checkmark 
 {
+    box-sizing: border-box;
     position: absolute;
     top: 0;
     left: 0;
-    height: 25px;
+    height: 100%;
     width: 100%;
     padding: 2px;
     border-radius: 5px;
     text-indent: 10px;
+}
+.container > p
+{
+    position: relative;
+    z-index: 2;
+    padding-top: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
 }
 .container:hover .checkmark 
 {

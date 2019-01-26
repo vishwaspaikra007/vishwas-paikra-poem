@@ -33,7 +33,8 @@ description : I'm currently a student who is trying his best
            <div ng-repeat="a in poets track by $index">
               <label class="container">
                    <input type="radio" name="poets" ng-click="titleL(a.Id)">
-                   <span class="checkmark">{{a.name}}</span> <br> 
+                   <span class="checkmark"></span>
+                   <p>{{a.name}}</p><br> 
               </label>
             </div>
           </form>
@@ -44,8 +45,9 @@ description : I'm currently a student who is trying his best
           <form action="#" onsubmit="return false">
             <div ng-repeat="t in titles track by $index" id="poemList"> 
                <label class="container">
-                    <input type="radio" name="title" ng-value="{{p.Id}}" ng-click="poem(t.Id)">
-                    <span class="checkmark">{{t.title}}</span> <br>
+                    <input type="radio" name="title" ng-value="{{p.Id}}" ng-click="poem(t.Id) ">
+                    <span class="checkmark"></span>
+                    <p>{{t.title}}</p><br>
                </label>
             </div>
           </form>
