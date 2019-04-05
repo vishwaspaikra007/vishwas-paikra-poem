@@ -25,7 +25,7 @@ description : I'm currently a student who is trying his best
     </div>
     <div class="maincontainer">
     <div class="mainMenu" id="mainMenu1" ng-class="{'shi':toggle}">
-        <div class="menu" id="uploadMenu" ng-click="toggle2 = !toggle2" >Upload</div>
+        <div class="menu" id="uploadMenu" onclick="formclick()" >Upload</div>
 <!-- Author menu Author menu Author menu Author menu Author menu Author menu -->
         <div class="menu" id="authorMenu">
          <h1>Poets</h1>
@@ -69,7 +69,8 @@ description : I'm currently a student who is trying his best
         </div>
     </div>
 <!-- upload form ---------------------------------------------------------->
-<div class="formBackground" ng-class="{'uploadC' : toggle2}" ng-click="toggle2 = !toggle2">
+<div class="formBackground" id="formbackground" >
+    <div class="formclose" onclick="formclick()">X</div>
   <div class="formContainer">
    <form action="#" method="post" id="uploadForm">
        <label for="inputName">
@@ -86,8 +87,10 @@ description : I'm currently a student who is trying his best
        </label><br><br>
        <input type="submit" value="Submit">
     </form>
+    <div class="livePoemContainer">
    <div class="livePoem">{{livePoem}}</div>
-  </div>  
+</div>
+</div>  
 </div> 
 </body>
 </html>

@@ -17,6 +17,7 @@
     max-width: 800px;
     width: 70vw;
     max-height: 70vh;
+    height: 70vh;
     display: grid;
     grid-template-columns: 58% 40%;
     grid-gap: 1%;
@@ -25,6 +26,20 @@
     border-radius: 20px 0px 0px 20px ;
     background: darkgoldenrod;
     box-sizing: border-box;
+    overflow-y: scroll;
+}
+.formclose {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    background: darkgoldenrod;
+    border-radius: 50%;
+    float: right;
+    text-align: center;
+    padding: 0px;
+    margin: 20px;
+    font-size: 40px;
+    cursor: pointer;
 }
 #uploadForm
 {
@@ -37,6 +52,9 @@
     box-sizing: border-box;
     background:  rgba(230,210,150,1);
     box-sizing: border-box;
+    position: sticky;
+    top: 0px;
+    bottom: 0px;
 }
 #uploadForm > span
 {
@@ -85,14 +103,24 @@ textarea
     height: 100px;
     box-sizing: border-box;
 }
+.livePoemContainer
+{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
 .livePoem
 {
     position: relative;
+    height: 100%;
+    width: 100%;
     border: 2px solid black;
     background: brown;
     padding: 20px;
     box-sizing: border-box;
     font-size: 20px;
+    overflow: hidden;
 }
 @media only screen and (max-width: 800px)
 {

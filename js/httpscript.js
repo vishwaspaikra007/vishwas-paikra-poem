@@ -47,9 +47,23 @@ var myPoemController = function($scope,$http) {
     $scope.livepoem = "Once upon a time"; 
 };
 myApp.controller("myPoemController",myPoemController);
+var toggle2, upload;
 window.onload = function() {
     alert("PLease select author and poem from the menu{the three bars inside a circle}");
 }
 
-
-
+document.addEventListener("DOMContentLoaded",domHasLoaded,false);
+function domHasLoaded() {
+    upload = document.getElementById('formbackground');
+    toggle2 = false;
+}
+function formclick() {
+    if(toggle2==false) {
+        upload.style.display = 'block'; 
+        toggle2 = true;
+    }
+    else if(toggle2==true) {
+        upload.style.display = 'none'; 
+        toggle2 = false;
+    }
+}
